@@ -1,10 +1,10 @@
 package com.greenjon902.cr_squared.threeD_nBody_simulator;
 
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Color;
-import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinates;
+import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 public class Particle {
-    private final Coordinates coordinates;
+    private final Coordinate coordinates;
     private final float mass;
     private final float radius;
     private final float velocity;
@@ -13,20 +13,20 @@ public class Particle {
     private final String name;
     private final Color color;
 
-    public Particle(Coordinates coordinates, float mass, float radius, float velocity, float pitch, float yaw) {
+    public Particle(Coordinate coordinates, float mass, float radius, float velocity, float pitch, float yaw) {
         this(coordinates, mass, radius, velocity, pitch, yaw, null, null);
     }
 
-    public Particle(Coordinates coordinates, float mass, float radius, float velocity, float pitch, float yaw, String name) {
+    public Particle(Coordinate coordinates, float mass, float radius, float velocity, float pitch, float yaw, String name) {
         this(coordinates, mass, radius, velocity, pitch, yaw, name, null);
     }
 
-    public Particle(Coordinates coordinates, float mass, float radius, float velocity, float pitch, float yaw, Color color) {
+    public Particle(Coordinate coordinates, float mass, float radius, float velocity, float pitch, float yaw, Color color) {
         this(coordinates, mass, radius, velocity, pitch, yaw, null, color);
     }
 
-    public Particle(Coordinates coordinates, float mass, float radius, float velocity, float pitch, float yaw, String name, Color color) {
-        this.coordinates = coordinates;
+    public Particle(Coordinate coordinate, float mass, float radius, float velocity, float pitch, float yaw, String name, Color color) {
+        this.coordinates = coordinate;
         this.mass = mass;
         this.radius = radius;
         this.velocity = velocity;
@@ -64,7 +64,7 @@ public class Particle {
         return color;
     }
 
-    public Coordinates getCoordinates() {
+    public Coordinate getCoordinates() {
         return coordinates;
     }
 }
