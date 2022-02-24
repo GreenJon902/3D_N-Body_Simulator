@@ -3,6 +3,9 @@ package com.greenjon902.cr_squared.threeD_nBody_simulator;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Color;
 
 public class Particle {
+    private final float x;
+    private final float y;
+    private final float z;
     private final float mass;
     private final float radius;
     private final float velocity;
@@ -11,19 +14,19 @@ public class Particle {
     private final String name;
     private final Color color;
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw) {
-        this(mass, radius, velocity, pitch, yaw, null, null);
+    public Particle(float x, float y, float z, float mass, float radius, float velocity, float pitch, float yaw) {
+        this(x, y, z, mass, radius, velocity, pitch, yaw, null, null);
     }
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw, String name) {
-        this(mass, radius, velocity, pitch, yaw, name, null);
+    public Particle(float x, float y, float z, float mass, float radius, float velocity, float pitch, float yaw, String name) {
+        this(x, y, z, mass, radius, velocity, pitch, yaw, name, null);
     }
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw, Color color) {
-        this(mass, radius, velocity, pitch, yaw, null, color);
+    public Particle(float x, float y, float z, float mass, float radius, float velocity, float pitch, float yaw, Color color) {
+        this(x, y, z, mass, radius, velocity, pitch, yaw, null, color);
     }
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw, String name, Color color) {
+    public Particle(float x, float y, float z, float mass, float radius, float velocity, float pitch, float yaw, String name, Color color) {
         this.mass = mass;
         this.radius = radius;
         this.velocity = velocity;
