@@ -12,6 +12,6 @@ public class RendererTest {
         particleWorld.addParticle(new Particle(-20, 0, 0, -1, 10, 0, 0, 0));
 
         Renderer renderer = new Renderer(particleWorld);
-        renderer.renderLoop();
+        renderer.mainloop();
     }
 }
