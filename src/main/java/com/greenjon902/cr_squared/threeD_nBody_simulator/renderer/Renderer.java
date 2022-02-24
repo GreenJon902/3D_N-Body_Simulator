@@ -12,4 +12,12 @@ public class Renderer {
     public void renderLoop() {
 
     }
+
+    public void update() {
+
+    }
+
+    public void drawTo() {
+
+    }
 }
