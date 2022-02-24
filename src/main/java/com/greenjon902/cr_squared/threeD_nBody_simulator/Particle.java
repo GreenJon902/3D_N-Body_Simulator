@@ -27,6 +27,9 @@ public class Particle {
     }
 
     public Particle(float x, float y, float z, float mass, float radius, float velocity, float pitch, float yaw, String name, Color color) {
+        this.x = x;
+        this.y = y;
+        this.z = z;
         this.mass = mass;
         this.radius = radius;
         this.velocity = velocity;
