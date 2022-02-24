@@ -9,7 +9,7 @@ public class RendererTest {
     @Test
     public void basicRenderer() {
         ParticleWorld particleWorld = new ParticleWorld();
-        particleWorld.addParticle(new Particle(-1, 10, 0, 0, 0));
+        particleWorld.addParticle(new Particle(-20, 0, 0, -1, 10, 0, 0, 0));
 
         Renderer renderer = new Renderer(particleWorld);
         renderer.renderLoop();
