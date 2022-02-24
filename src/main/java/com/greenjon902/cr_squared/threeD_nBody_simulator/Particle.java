@@ -32,4 +32,32 @@ public class Particle {
         this.name = name;
         this.color = color;
     }
+
+    public float getMass() {
+        return mass;
+    }
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public float getVelocity() {
+        return velocity;
+    }
+
+    public float getPitch() {
+        return pitch;
+    }
+
+    public float getYaw() {
+        return yaw;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Color getColor() {
+        return color;
+    }
 }
