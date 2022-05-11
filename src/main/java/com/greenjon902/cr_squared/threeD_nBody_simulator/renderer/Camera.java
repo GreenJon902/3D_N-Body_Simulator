@@ -34,4 +34,15 @@ public class Camera {
     public double getFov() {
         return fov;
     }
+
+    public void setYaw(double yaw) {
+        this.yaw = yaw;
+        while (!(-180 <= this.yaw && this.yaw <= 180)) {
+            if (this.yaw < -180) {
+                this.yaw = 180 + (this.yaw + 180);
+            } else if (this.yaw > 180) {
+                this.yaw = -180 + (this.yaw - 180);
+            }
+        }
+    }
 }
