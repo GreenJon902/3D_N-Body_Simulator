@@ -63,9 +63,12 @@ class Canvas extends JPanel {
         Arrays.sort(distances);
 
         for (Float distance : distances) {
-            System.out.println(distance);
-            System.out.println(particleDistances.get(distance));
-            System.out.println();
+            Particle particle = particleDistances.get(distance);
+
+            // get xy plane angle
+            float rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
+            float ry = particle.getCoordinates().getY() - camera.getCoordinate().getY();
+            double xy_angle = Math.atan(ry/rx);
         }
     }
 }

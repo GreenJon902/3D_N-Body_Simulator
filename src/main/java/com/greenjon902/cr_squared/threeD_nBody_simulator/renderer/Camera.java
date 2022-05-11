@@ -12,4 +12,17 @@ public class Camera {
         this.pitch = pitch;
         this.yaw = yaw;
     }
+
+
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public float getPitch() {
+        return pitch;
+    }
+
+    public float getYaw() {
+        return yaw;
+    }
 }
