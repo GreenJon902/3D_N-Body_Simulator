@@ -68,7 +68,16 @@ class Canvas extends JPanel {
             // get xy plane angle
             double rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
             double ry = particle.getCoordinates().getY() - camera.getCoordinate().getY();
-            double xy_angle = Math.atan(ry/rx);
+            double xy_angle = Math.toDegrees(Math.atan(ry/rx)) - camera.getYaw();
+            int screen_x = (int) ((xy_angle + camera.getFov() / 2) / camera.getFov() * getWidth());
+
+            // get xz plane angle
+            rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
+            double rz = particle.getCoordinates().getZ() - camera.getCoordinate().getZ();
+            double xz_angle = Math.toDegrees(Math.atan(rz/rx)) - camera.getPitch();
+            int screen_y = (int) ((xz_angle + camera.getFov() / 2) / camera.getFov() * getHeight());
+
+            g.drawOval( screen_x, screen_y, 10, 10);
         }
     }
 }
