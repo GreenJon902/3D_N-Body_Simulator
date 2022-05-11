@@ -3,10 +3,10 @@ package com.greenjon902.cr_squared.threeD_nBody_simulator.renderer;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 public class Camera {
-    private final Coordinate coordinate;
-    private final double pitch;
-    private final double yaw;
-    private final double fov;
+    private Coordinate coordinate;
+    private double pitch;
+    private double yaw;
+    private double fov;
 
     public Camera(Coordinate coordinate, double pitch, double yaw, double fov) {
         this.coordinate = coordinate;
