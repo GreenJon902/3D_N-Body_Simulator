@@ -34,8 +34,12 @@ public class Renderer {
     }
 
     public void mainloop() {
+        double time = System.currentTimeMillis() / 1000d;
         while (true) {
+            double dt = time - System.currentTimeMillis() / 1000d;
+            time = System.currentTimeMillis() / 1000d;
             window.repaint();
+            camera.setYaw(camera.getYaw() + 100d * dt);
         }
     }
 }
@@ -69,6 +73,7 @@ class Canvas extends JPanel {
             double rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
             double ry = particle.getCoordinates().getY() - camera.getCoordinate().getY();
             double xy_angle = Math.toDegrees(Math.atan(ry/rx)) - camera.getYaw();
+            System.out.println(xy_angle);
             int screen_x = (int) ((xy_angle + camera.getFov() / 2) / camera.getFov() * getWidth());
 
             // get xz plane angle
