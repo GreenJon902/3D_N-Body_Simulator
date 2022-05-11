@@ -67,4 +67,16 @@ public class Particle {
     public Coordinate getCoordinates() {
         return coordinates;
     }
+
+    @Override
+    public String toString() {
+        String string = "Particle(coordinate=" + coordinates + ", mass=" + mass + ", radius=" + radius + ", velocity=" + velocity + ", pitch=" + pitch;
+        if (name != null) {
+            string += ", name=" + name;
+        } else if (color != null) {
+            string += ", color=" + color;
+        }
+        string += ")";
+        return string;
+    }
 }

@@ -22,4 +22,9 @@ public class Coordinate {
     public float getZ() {
         return z;
     }
+
+    @Override
+    public String toString() {
+        return "Particle(" + x + ", " + y + ", " + z + ")";
+    }
 }
