@@ -4,10 +4,10 @@ import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 public class Camera {
     private final Coordinate coordinate;
-    private final float pitch;
-    private final float yaw;
+    private final double pitch;
+    private final double yaw;
 
-    public Camera(Coordinate coordinate, float pitch, float yaw) {
+    public Camera(Coordinate coordinate, double pitch, double yaw) {
         this.coordinate = coordinate;
         this.pitch = pitch;
         this.yaw = yaw;
@@ -18,11 +18,11 @@ public class Camera {
         return coordinate;
     }
 
-    public float getPitch() {
+    public double getPitch() {
         return pitch;
     }
 
-    public float getYaw() {
+    public double getYaw() {
         return yaw;
     }
 }

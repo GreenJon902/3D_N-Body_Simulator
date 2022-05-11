@@ -1,25 +1,25 @@
 package com.greenjon902.cr_squared.threeD_nBody_simulator.structs;
 
 public class Coordinate {
-    private final float x;
-    private final float y;
-    private final float z;
+    private final double x;
+    private final double y;
+    private final double z;
 
-    public Coordinate(float x, float y, float z) {
+    public Coordinate(double x, double y, double z) {
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
-    public float getX() {
+    public double getX() {
         return x;
     }
 
-    public float getY() {
+    public double getY() {
         return y;
     }
 
-    public float getZ() {
+    public double getZ() {
         return z;
     }
 

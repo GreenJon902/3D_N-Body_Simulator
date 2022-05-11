@@ -53,21 +53,21 @@ class Canvas extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        HashMap<Float, Particle> particleDistances = new HashMap<>();
+        HashMap<Double, Particle> particleDistances = new HashMap<>();
 
         for (Particle particle : particleWorld.getParticles()) {
             particleDistances.put(ThreeD_Utils.getDistance(particle.getCoordinates(), new Coordinate(0, 0, 0)), particle);
         }
 
-        Float[] distances = particleDistances.keySet().toArray(new Float[0]);
+        Double[] distances = particleDistances.keySet().toArray(new Double[0]);
         Arrays.sort(distances);
 
-        for (Float distance : distances) {
+        for (Double distance : distances) {
             Particle particle = particleDistances.get(distance);
 
             // get xy plane angle
-            float rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
-            float ry = particle.getCoordinates().getY() - camera.getCoordinate().getY();
+            double rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
+            double ry = particle.getCoordinates().getY() - camera.getCoordinate().getY();
             double xy_angle = Math.atan(ry/rx);
         }
     }
