@@ -10,60 +10,62 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class Renderer {
-    private ParticleWorld particleWorld;
+    private final ParticleWorld particleWorld;
+    private final Camera camera;
+
     private final Window window;
     private final Canvas canvas;
 
-    public Renderer(ParticleWorld particleWorld) {
-        this(particleWorld, new Window() {{
+    public Renderer(ParticleWorld particleWorld, Camera camera) {
+        this(particleWorld, camera, new Window() {{
             setSize(500, 500);
         }});
 
     }
 
-    public Renderer(ParticleWorld particleWorld, Window window) {
+    public Renderer(ParticleWorld particleWorld, Camera camera, Window window) {
         this.particleWorld = particleWorld;
+        this.camera = camera;
 
         this.window = window;
-        this.canvas = new Canvas(particleWorld);
+        this.canvas = new Canvas(particleWorld, camera);
         this.window.add(this.canvas);
         this.window.setVisible(true);
     }
 
     public void mainloop() {
         while (true) {
-            canvas.setParticleWorld(particleWorld);
             window.repaint();
         }
     }
 }
 
 class Canvas extends JPanel {
-    private ParticleWorld particleWorld;
+    private final ParticleWorld particleWorld;
+    private final Camera camera;
 
-    public Canvas(ParticleWorld particleWorld) {
+    public Canvas(ParticleWorld particleWorld, Camera camera) {
         this.particleWorld = particleWorld;
+        this.camera = camera;
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        HashMap<Float, Particle> particleDistances = new HashMap<Float, Particle>();
+        HashMap<Float, Particle> particleDistances = new HashMap<>();
 
         for (Particle particle : particleWorld.getParticles()) {
             particleDistances.put(ThreeD_Utils.getDistance(particle.getCoordinates(), new Coordinate(0, 0, 0)), particle);
         }
 
-        Object[] distances = particleDistances.keySet().toArray();
+        Float[] distances = particleDistances.keySet().toArray(new Float[0]);
         Arrays.sort(distances);
 
-        for (Object distance : distances) {
+        for (Float distance : distances) {
+            System.out.println(distance);
             System.out.println(particleDistances.get(distance));
+            System.out.println();
         }
-    }
-
-    public void setParticleWorld(ParticleWorld particleWorld) {
-        this.particleWorld = particleWorld;
     }
 }
