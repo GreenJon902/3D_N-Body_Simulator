@@ -44,6 +44,7 @@ public class Window extends JFrame implements WindowListener {
 
     private void moveView(double dx, double dy) {
         camera.setYaw(camera.getYaw() - dx / getWidth() * camera.getFov());
+        camera.setPitch(camera.getPitch() - dy / getHeight() * camera.getFov());
     }
 
     @Override
