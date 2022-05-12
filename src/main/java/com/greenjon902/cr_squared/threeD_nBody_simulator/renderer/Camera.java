@@ -16,7 +16,7 @@ public class Camera {
     }
 
     public Camera(Coordinate coordinate, double pitch, double yaw) {
-        this(coordinate, pitch, yaw, 180);
+        this(coordinate, pitch, yaw, 90);
     }
 
     public Coordinate getCoordinate() {
