@@ -22,4 +22,8 @@ public class Color {
     public double getB() {
         return b;
     }
+
+    public java.awt.Color toAwtColor() {
+        return new java.awt.Color((int) r, (int) g, (int) b);
+    }
 }
