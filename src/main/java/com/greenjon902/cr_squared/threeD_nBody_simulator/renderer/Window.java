@@ -36,12 +36,8 @@ public class Window extends JFrame implements WindowListener {
     }
 
     public void mainloop() {
-        double time = System.currentTimeMillis() / 1000d;
         while (mainloop) {
-            double dt = time - System.currentTimeMillis() / 1000d;
-            time = System.currentTimeMillis() / 1000d;
             this.repaint();
-            camera.getCoordinate().setZ(camera.getCoordinate().getZ() + 10d * dt);
         }
     }
 
