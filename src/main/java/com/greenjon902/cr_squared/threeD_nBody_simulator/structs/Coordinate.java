@@ -36,7 +36,7 @@ public class Coordinate {
         this.y = y;
     }
 
-    public void setZ(double y) {
+    public void setZ(double z) {
         this.z = z;
     }
 }
