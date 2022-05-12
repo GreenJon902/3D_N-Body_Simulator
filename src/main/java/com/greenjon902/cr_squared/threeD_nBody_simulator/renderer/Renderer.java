@@ -35,7 +35,12 @@ public class Renderer extends JPanel {
             double xz_angle = Math.toDegrees(Math.atan(rz/rx)) - camera.getPitch();
             int screen_y = (int) ((xz_angle + camera.getFov() / 2) / camera.getFov() * getHeight());
 
-            g.drawOval( screen_x, screen_y, 10, 10);
+            if (particle.getColor() != null) {
+                g.setColor(particle.getColor().toAwtColor());
+            } else {
+                g.setColor(Color.black);
+            }
+            g.fillOval((int) (screen_x - particle.getRadius()), (int) (screen_y - particle.getRadius()), (int) (particle.getRadius() * 2), (int) (particle.getRadius() * 2));
         }
     }
 }
