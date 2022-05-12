@@ -9,28 +9,24 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class Renderer {
+public class Renderer extends JFrame{
     private final ParticleWorld particleWorld;
     private final Camera camera;
 
-    private final Window window;
     private final Canvas canvas;
 
-    public Renderer(ParticleWorld particleWorld, Camera camera) {
-        this(particleWorld, camera, new Window() {{
-            setSize(500, 500);
-        }});
-
-    }
-
-    public Renderer(ParticleWorld particleWorld, Camera camera, Window window) {
+    public Renderer(ParticleWorld particleWorld, Camera camera, int width, int height) {
         this.particleWorld = particleWorld;
         this.camera = camera;
 
-        this.window = window;
+        this.setSize(width, height);
         this.canvas = new Canvas(particleWorld, camera);
-        this.window.add(this.canvas);
-        this.window.setVisible(true);
+        this.add(this.canvas);
+        this.setVisible(true);
+    }
+
+    public Renderer(ParticleWorld particleWorld, Camera camera) {
+        this(particleWorld, camera, 500, 500);
     }
 
     public void mainloop() {
@@ -38,7 +34,7 @@ public class Renderer {
         while (true) {
             double dt = time - System.currentTimeMillis() / 1000d;
             time = System.currentTimeMillis() / 1000d;
-            window.repaint();
+            this.repaint();
             camera.setYaw(camera.getYaw() + 100d * dt);
         }
     }
