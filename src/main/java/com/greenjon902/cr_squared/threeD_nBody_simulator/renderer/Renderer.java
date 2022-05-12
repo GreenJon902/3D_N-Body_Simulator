@@ -38,7 +38,6 @@ public class Renderer extends JPanel {
             double rx = particle.getCoordinates().getX() - camera.getCoordinate().getX();
             double ry = particle.getCoordinates().getY() - camera.getCoordinate().getY();
             double xy_angle = Math.toDegrees(Math.atan(ry/rx)) - camera.getYaw();
-            System.out.println(xy_angle);
             int screen_x = (int) ((xy_angle + camera.getFov() / 2) / camera.getFov() * getWidth());
 
             // get xz plane angle

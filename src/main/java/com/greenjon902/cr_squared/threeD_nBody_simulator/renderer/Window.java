@@ -13,6 +13,8 @@ public class Window extends JFrame implements WindowListener {
 
     private final Renderer canvas;
 
+    private final MovementListener movementListener = new MovementListener(this::moveView);
+
     private boolean mainloop = true;
 
     public Window(ParticleWorld particleWorld, Camera camera, int width, int height) {
@@ -24,6 +26,8 @@ public class Window extends JFrame implements WindowListener {
         this.add(this.canvas);
 
         this.addWindowListener(this);
+        this.addMouseListener(movementListener);
+        this.addMouseMotionListener(movementListener);
 
         this.setVisible(true);
     }
@@ -33,13 +37,13 @@ public class Window extends JFrame implements WindowListener {
     }
 
     public void mainloop() {
-        double time = System.currentTimeMillis() / 1000d;
         while (mainloop) {
-            double dt = time - System.currentTimeMillis() / 1000d;
-            time = System.currentTimeMillis() / 1000d;
             this.repaint();
-            camera.setYaw(camera.getYaw() + 100d * dt);
         }
+    }
+
+    private void moveView(double dx, double dy) {
+        camera.setYaw(camera.getYaw() - dx / getWidth() * camera.getFov());
     }
 
     @Override

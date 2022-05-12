@@ -44,6 +44,8 @@ public class MovementListener implements MouseListener, MouseMotionListener {
         }
 
         mouseMoveCallback.run(e.getX() - lastX, e.getY() - lastY);
+        lastX = e.getX();
+        lastY = e.getY();
     }
 
     @Override
