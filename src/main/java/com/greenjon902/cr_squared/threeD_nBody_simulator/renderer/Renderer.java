@@ -2,14 +2,9 @@ package com.greenjon902.cr_squared.threeD_nBody_simulator.renderer;
 
 import com.greenjon902.cr_squared.threeD_nBody_simulator.Particle;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.ParticleWorld;
-import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
 
 public class Renderer extends JPanel {
     private final ParticleWorld particleWorld;

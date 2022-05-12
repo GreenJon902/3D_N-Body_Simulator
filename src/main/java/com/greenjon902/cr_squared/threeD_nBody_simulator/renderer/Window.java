@@ -3,7 +3,6 @@ package com.greenjon902.cr_squared.threeD_nBody_simulator.renderer;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.ParticleWorld;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 

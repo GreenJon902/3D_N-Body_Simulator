@@ -3,8 +3,6 @@ package com.greenjon902.cr_squared.threeD_nBody_simulator;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Color;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
-import java.util.Comparator;
-
 public class Particle {
     private final Coordinate coordinates;
     private final double mass;

@@ -4,7 +4,6 @@ import com.greenjon902.cr_squared.threeD_nBody_simulator.Particle;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class ThreeD_Utils {
     public static double getDistance(Coordinate coordinate1, Coordinate coordinate2) {

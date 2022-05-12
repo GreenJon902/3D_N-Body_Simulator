@@ -3,9 +3,6 @@ package com.greenjon902.cr_squared.threeD_nBody_simulator.renderer;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.io.FileWriter;
-import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class MovementListener implements MouseListener, MouseMotionListener {
     private MouseDragCallback mouseMoveCallback;
