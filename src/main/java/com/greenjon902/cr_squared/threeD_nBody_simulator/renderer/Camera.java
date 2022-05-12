@@ -10,8 +10,8 @@ public class Camera {
 
     public Camera(Coordinate coordinate, double pitch, double yaw, double fov) {
         this.coordinate = coordinate;
-        this.pitch = pitch;
-        this.yaw = yaw;
+        this.pitch = AngleFixer.fix(pitch);
+        this.yaw = AngleFixer.fix(yaw);
         this.fov = fov;
     }
 
@@ -36,13 +36,10 @@ public class Camera {
     }
 
     public void setYaw(double yaw) {
-        this.yaw = yaw;
-        while (!(-180 <= this.yaw && this.yaw <= 180)) {
-            if (this.yaw < -180) {
-                this.yaw = 180 + (this.yaw + 180);
-            } else if (this.yaw > 180) {
-                this.yaw = -180 + (this.yaw - 180);
-            }
-        }
+        this.yaw = AngleFixer.fix(yaw);
+    }
+
+    public void setPitch(double pitch) {
+        this.pitch = AngleFixer.fix(pitch);
     }
 }
