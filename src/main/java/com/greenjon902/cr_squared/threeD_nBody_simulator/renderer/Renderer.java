@@ -20,7 +20,7 @@ public class Renderer extends JPanel {
         super.paintComponent(g);
 
         Particle[] particles = particleWorld.getParticles();
-        particles = ThreeD_Utils.sortParticlesOnDistanceFromCoordinate(particles, camera.getCoordinate());
+        particles = Utils.sortParticlesOnDistanceFromCoordinate(particles, camera.getCoordinate());
 
         for (Particle particle : particles) {
             // get xy plane angle

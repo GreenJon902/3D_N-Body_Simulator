@@ -5,7 +5,7 @@ import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 import java.util.ArrayList;
 
-public class ThreeD_Utils {
+public class Utils {
     public static double getDistance(Coordinate coordinate1, Coordinate coordinate2) {
         double a1 = coordinate2.getX() - coordinate1.getX();
         double b1 = coordinate2.getY() - coordinate1.getY();
