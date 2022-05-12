@@ -1,29 +1,32 @@
 package com.greenjon902.cr_squared.threeD_nBody_simulator;
 
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Color;
+import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 
 public class Particle {
-    private final float mass;
-    private final float radius;
-    private final float velocity;
-    private final float pitch;
-    private final float yaw;
+    private final Coordinate coordinates;
+    private final double mass;
+    private final double radius;
+    private final double velocity;
+    private final double pitch;
+    private final double yaw;
     private final String name;
     private final Color color;
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw) {
-        this(mass, radius, velocity, pitch, yaw, null, null);
+    public Particle(Coordinate coordinates, double mass, double radius, double velocity, double pitch, double yaw) {
+        this(coordinates, mass, radius, velocity, pitch, yaw, null, null);
     }
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw, String name) {
-        this(mass, radius, velocity, pitch, yaw, name, null);
+    public Particle(Coordinate coordinates, double mass, double radius, double velocity, double pitch, double yaw, String name) {
+        this(coordinates, mass, radius, velocity, pitch, yaw, name, null);
     }
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw, Color color) {
-        this(mass, radius, velocity, pitch, yaw, null, color);
+    public Particle(Coordinate coordinates, double mass, double radius, double velocity, double pitch, double yaw, Color color) {
+        this(coordinates, mass, radius, velocity, pitch, yaw, null, color);
     }
 
-    public Particle(float mass, float radius, float velocity, float pitch, float yaw, String name, Color color) {
+    public Particle(Coordinate coordinate, double mass, double radius, double velocity, double pitch, double yaw, String name, Color color) {
+        this.coordinates = coordinate;
         this.mass = mass;
         this.radius = radius;
         this.velocity = velocity;
@@ -33,23 +36,23 @@ public class Particle {
         this.color = color;
     }
 
-    public float getMass() {
+    public double getMass() {
         return mass;
     }
 
-    public float getRadius() {
+    public double getRadius() {
         return radius;
     }
 
-    public float getVelocity() {
+    public double getVelocity() {
         return velocity;
     }
 
-    public float getPitch() {
+    public double getPitch() {
         return pitch;
     }
 
-    public float getYaw() {
+    public double getYaw() {
         return yaw;
     }
 
@@ -59,5 +62,21 @@ public class Particle {
 
     public Color getColor() {
         return color;
+    }
+
+    public Coordinate getCoordinates() {
+        return coordinates;
+    }
+
+    @Override
+    public String toString() {
+        String string = "Particle(coordinate=" + coordinates + ", mass=" + mass + ", radius=" + radius + ", velocity=" + velocity + ", pitch=" + pitch;
+        if (name != null) {
+            string += ", name=" + name;
+        } else if (color != null) {
+            string += ", color=" + color;
+        }
+        string += ")";
+        return string;
     }
 }
