@@ -3,11 +3,11 @@ package threeD_nBody_simulator.renderer;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.Particle;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.ParticleWorld;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.renderer.Camera;
-import com.greenjon902.cr_squared.threeD_nBody_simulator.renderer.Renderer;
+import com.greenjon902.cr_squared.threeD_nBody_simulator.renderer.Window;
 import com.greenjon902.cr_squared.threeD_nBody_simulator.structs.Coordinate;
 import org.junit.jupiter.api.Test;
 
-public class RendererTest {
+public class WindowTest {
     @Test
     public void basicRenderer() {
         ParticleWorld particleWorld = new ParticleWorld();
@@ -15,7 +15,7 @@ public class RendererTest {
 
         Camera camera = new Camera(new Coordinate(0, 0, 0), 0, 0);
 
-        Renderer renderer = new Renderer(particleWorld, camera);
-        renderer.mainloop();
+        Window window = new Window(particleWorld, camera);
+        window.mainloop();
     }
 }
