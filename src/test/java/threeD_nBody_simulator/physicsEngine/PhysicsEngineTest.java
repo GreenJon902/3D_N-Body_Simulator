@@ -13,8 +13,15 @@ public class PhysicsEngineTest {
     public float y;
     public float z;
 
+    private float xv;
+    private float yv;
+    private float zv;
+
+
+    public double mass;
+
     @Test
-    public void Nbody(double G, double AU, float x, float y, float z, double mass){
+    public void Nbody(double G, double AU, float x, float y, float z, double mass, float xv, float yv, float zv){
         this.G = G;
         this.AU = AU; // do i need since they are both already public?
 
@@ -23,13 +30,13 @@ public class PhysicsEngineTest {
         this.y = y;
         this.z = z;
 
-        //test
+        this.mass = mass;
 
+        //velocitiys
 
-
-
-
-
+        this.xv = xv;
+        this.yv = yv;
+        this.zv = zv;
 
 
 
