@@ -10,7 +10,18 @@ public class PhysicsEngineTest {
     private double scale = 250 / AU; // 1 AU = 250 pixels
 
     @Test
-    public PhysicsEngineTest(double G, double AU){
+    public void Nbody(double G, double AU, float x, float y, float z, double mass){
+        this.G = G;
+        this.AU = AU; // do i need since they are both already public?
+
+        this.x = x;
+        this.y = y;
+        this.z = z;
+
+
+
+
+
 
 
     }
