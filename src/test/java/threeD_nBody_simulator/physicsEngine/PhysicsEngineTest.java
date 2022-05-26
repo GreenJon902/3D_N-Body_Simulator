@@ -9,14 +9,21 @@ public class PhysicsEngineTest {
     private int step = 1; // may or may not be needed
     private double scale = 250 / AU; // 1 AU = 250 pixels
 
+    public float x;
+    public float y;
+    public float z;
+
     @Test
     public void Nbody(double G, double AU, float x, float y, float z, double mass){
         this.G = G;
         this.AU = AU; // do i need since they are both already public?
 
+        //cords obv
         this.x = x;
         this.y = y;
         this.z = z;
+
+
 
 
 
