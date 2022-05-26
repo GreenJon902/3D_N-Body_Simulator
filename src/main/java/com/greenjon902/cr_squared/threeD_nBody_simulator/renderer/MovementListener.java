@@ -1,16 +1,16 @@
 package com.greenjon902.cr_squared.threeD_nBody_simulator.renderer;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 
-public class MovementListener implements MouseListener, MouseMotionListener {
+public class MovementListener implements MouseListener, MouseMotionListener, KeyListener {
     private MouseDragCallback mouseMoveCallback;
+    private KeyCallback keyCallback;
     private Integer lastX = null;
     private Integer lastY = null;
 
-    public MovementListener(MouseDragCallback mouseMoveCallback) {
+    public MovementListener(MouseDragCallback mouseMoveCallback, KeyCallback keyCallback) {
         this.mouseMoveCallback = mouseMoveCallback;
+        this.keyCallback = keyCallback;
     }
 
     @Override
@@ -47,8 +47,25 @@ public class MovementListener implements MouseListener, MouseMotionListener {
 
     @Override
     public void mouseMoved(MouseEvent e) {}
+
+    @Override
+    public void keyTyped(KeyEvent e) {}
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        keyCallback.run(e.getKeyCode(), true);
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        keyCallback.run(e.getKeyCode(), false);
+    }
 }
 
 interface MouseDragCallback {
     void run(int x, int y);
+}
+
+interface KeyCallback {
+    void run(int keyCode, boolean down);
 }
