@@ -17,6 +17,12 @@ public class PhysicsEngineTest {
     private float yv;
     private float zv;
 
+    //forces
+
+    public float force_x;
+    public float force_y;
+    public float force_z;
+
 
     public double mass;
 
@@ -37,6 +43,8 @@ public class PhysicsEngineTest {
         this.xv = xv;
         this.yv = yv;
         this.zv = zv;
+
+
 
 
 
