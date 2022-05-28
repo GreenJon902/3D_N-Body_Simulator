@@ -29,8 +29,6 @@ public class PhysicsEngine {
     public double mass;
     private Object obj;
 
-    
-    
 
     public PhysicsEngine(ParticleWorld world) {
         this.world = world;
@@ -40,7 +38,7 @@ public class PhysicsEngine {
         return new ParticleWorld();
     }
 
-    public void Nbody(double G, double AU, float x, float y, float z, double mass, float xv, float yv, float zv){
+    public void Nbody(double G, double AU, float x, float y, float z, double mass, float xv, float yv, float zv) {
         this.G = G;
         this.AU = AU; // do i need since they are both already public?
 
@@ -56,6 +54,5 @@ public class PhysicsEngine {
         this.xv = xv;
         this.yv = yv;
         this.zv = zv;
-
-        private final ParticleWorld world;
+    }
 }
