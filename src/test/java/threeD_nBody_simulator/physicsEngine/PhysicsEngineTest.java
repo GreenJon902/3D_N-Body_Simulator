@@ -25,6 +25,7 @@ public class PhysicsEngineTest {
 
 
     public double mass;
+    private Object obj;
 
     @Test
     public void Nbody(double G, double AU, float x, float y, float z, double mass, float xv, float yv, float zv){
@@ -43,9 +44,6 @@ public class PhysicsEngineTest {
         this.xv = xv;
         this.yv = yv;
         this.zv = zv;
-
-
-
 
 
     }
